@@ -153,15 +153,16 @@ dashboardSidebar <- function(..., disable = FALSE, width = NULL, collapsed = FAL
 #'
 #' @export
 sidebarUserPanel <- function(name, subtitle = NULL, image = NULL) {
-  div(class = "user-panel",
+  div(class = "user-panel", style="background-color:transparent;",
     if (!is.null(image)) {
       div(class = "pull-left image",
         img(src = image, class = "img-circle", alt = "User Image")
       )
     },
     div(class = "pull-left info",
+        style = "background-color:transparent;",
       # If no image, move text to the left: by overriding default left:55px
-      style = if (is.null(image)) "left: 4px",
+      # style = if (is.null(image)) "left: 4px",
       p(name),
       subtitle
     )
